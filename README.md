@@ -80,21 +80,21 @@ Each metric looks at a different group of images:
 
 - **Recall** looks only at the defective images: what share did we catch?
 
-  $$
+  ```math
   \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
-  $$
+  ```
 
 - **False Positive Rate (FPR)** looks only at the good images: what share did we wrongly flag?
 
-  $$
+  ```math
   \text{FPR} = \frac{\text{FP}}{\text{FP} + \text{TN}}
-  $$
+  ```
 
 - **Precision** mixes both groups: of everything flagged, what share is actually defective?
 
-  $$
+  ```math
   \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
-  $$
+  ```
 
 Because precision mixes the two groups, it changes when the ratio between them changes, even if the model stays exactly the same. Recall and FPR don't, because each one stays inside its own group. They still depend on the model, the threshold, and which kinds of defects and good images are in the set.
 
