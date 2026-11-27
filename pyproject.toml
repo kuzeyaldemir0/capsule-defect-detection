@@ -1,0 +1,15 @@
+[project]
+name = "capsule-defect-detection"
+version = "0.0.1"
+description = "FENG 497 multidisciplinary group project"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=7.4.0",
+    "numpy>=2.5.5",
+    "pillow>=13.0.0",
+    "scikit-learn>=1.9.1",
+    "torch>=2.15.0",
+    "torchvision>=0.29.2",
+    "tqdm>=4.70.1",
+]
