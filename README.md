@@ -64,7 +64,7 @@ AUROC is the probability that a randomly chosen anomalous (defective) image rece
 It is threshold-independent: because it is computed from raw anomaly scores before any threshold is applied, it summarizes performance across all possible thresholds rather than at one fixed decision point. We therefore use it mainly to assess how well our anomaly detection model separates normal from anomalous images, independent of the threshold chosen later for deployment.
 
 $$
-AUROC = P\:(score\:(defective) > score\:(normal))
+\text{AUROC} = P\big(\text{score}(\text{defective}) > \text{score}(\text{normal})\big)
 $$
 
 ### 2. Recall, FPR, and Precision
@@ -81,19 +81,19 @@ Each metric looks at a different group of images:
 - **Recall** looks only at the defective images: what share did we catch?
 
   $$
-  Recall = \frac{TP}{TP + FN}
+  \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
   $$
 
 - **False Positive Rate (FPR)** looks only at the good images: what share did we wrongly flag?
 
   $$
-  FPR = \frac{FP}{FP + TN}
+  \text{FPR} = \frac{\text{FP}}{\text{FP} + \text{TN}}
   $$
 
 - **Precision** mixes both groups: of everything flagged, what share is actually defective?
 
   $$
-  Precision = \frac{TP}{TP + FP}
+  \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
   $$
 
 Because precision mixes the two groups, it changes when the ratio between them changes, even if the model stays exactly the same. Recall and FPR don't, because each one stays inside its own group. They still depend on the model, the threshold, and which kinds of defects and good images are in the set.
